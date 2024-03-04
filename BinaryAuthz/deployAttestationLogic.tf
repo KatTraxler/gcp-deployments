@@ -5,7 +5,7 @@
 
 module "cli" {
   source  = "terraform-google-modules/gcloud/google"
-  version = "~> 3.0"
+  version = "~> 3.4"
   create_cmd_entrypoint  = "gcloud"
 
   platform              = "linux"

@@ -55,6 +55,9 @@ resource "google_container_analysis_note" "note_2" {
     }
   }
 }
+
+
+
 resource "google_binary_authorization_attestor" "attestor_2" {
   name = "attestor-2"
   project = var.project_id
