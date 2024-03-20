@@ -11,7 +11,7 @@ resource "google_container_cluster" "kat_cluster" {
   initial_node_count       = 1
   binary_authorization {
 
-      evaluation_mode = "PROJECT_SINGLETON_POLICY_ENFORCE"
+      evaluation_mode = "DISABLED"
   }
   enable_autopilot = true
   network = "vpc-01"

@@ -80,11 +80,11 @@ resource "google_binary_authorization_attestor" "attestor_2" {
 ### IAM for Attestor Access ##
 ##############################
 
-resource "google_binary_authorization_attestor_iam_binding" "attestor_binding" {
-  project = var.project_id
-  attestor = "attestor-1"
-  role = "roles/binaryauthorization.attestorsVerifier"
-  members = [
-    google_service_account.attestation.member
-  ]
-}
+# resource "google_binary_authorization_attestor_iam_binding" "attestor_binding" {
+#   project = var.project_id
+#   attestor = "attestor-2"
+#   role = "roles/binaryauthorization.attestorsVerifier"
+#   members = [
+#     google_service_account.attestation.member
+#   ]
+# }
