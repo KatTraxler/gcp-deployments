@@ -33,3 +33,33 @@ resource "google_cloud_run_v2_service" "cloudrun-service" {
   depends_on = [ google_storage_bucket.cloudrun-service, google_secret_manager_secret.service-secret ]
   }
 
+resource "google_cloud_run_service" "cloudrun-service-v1" {
+  name     = "cloudrun-srv-v1"
+  location = "us-central1"
+
+  metadata {
+    namespace = "trust-kat-dev"
+  }
+
+  template {
+    spec {
+      containers {
+        image = "us-docker.pkg.dev/cloudrun/container/hello"
+      }
+    }
+  }
+}
+
+
+resource "google_cloud_run_domain_mapping" "my-domain-mapping" {
+  location = "us-central1"
+  name     = "kattraxler.cloud"
+
+  metadata {
+    namespace = "trust-kat-dev"
+  }
+
+  spec {
+    route_name = google_cloud_run_service.cloudrun-service-v1.name
+  }
+}
