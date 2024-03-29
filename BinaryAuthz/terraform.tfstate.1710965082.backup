@@ -1,0 +1,2731 @@
+{
+  "version": 4,
+  "terraform_version": "1.7.3",
+  "serial": 88,
+  "lineage": "ee42cb2b-c77c-5b55-817e-1c5d13966d58",
+  "outputs": {
+    "crypto_key": {
+      "value": "projects/trust-kat-dev/locations/global/keyRings/attestor-keys/cryptoKeys/attestor-key",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "google_kms_crypto_key_version",
+      "name": "version",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm": "RSA_SIGN_PKCS1_4096_SHA512",
+            "crypto_key": "projects/trust-kat-dev/locations/global/keyRings/attestor-keys/cryptoKeys/attestor-key",
+            "id": "//cloudkms.googleapis.com/v1/projects/trust-kat-dev/locations/global/keyRings/attestor-keys/cryptoKeys/attestor-key/cryptoKeyVersions/1",
+            "name": "projects/trust-kat-dev/locations/global/keyRings/attestor-keys/cryptoKeys/attestor-key/cryptoKeyVersions/1",
+            "protection_level": "SOFTWARE",
+            "public_key": [
+              {
+                "algorithm": "RSA_SIGN_PKCS1_4096_SHA512",
+                "pem": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAx3fcw78QiUuio+zzdvgB\nQyifeaWpubE4vF+4aifq8oVuepKryWxGB5RuSVZsd9WvrezRe+0xPCAcGqWZ0r8C\ne8t68QznunpHOG8S8YEF8oLT8+Hjd+c1g+ClxV3gj9pvXrCzsFfL5yLhK19+JHf0\nKyczGyd0f/uTwcXxMclweLPkOTQcUsfxH5SQHCHr8oCjqKOFLFVelDrb6BSHtiKh\nzrNShh85eErnwee7XWt4NrVMs67v2kLYejJjhLX2JSM0ojO0H4TEGVIUPOM8RpcF\nw6C4I+m8Z9DfC5/yDfZ6wKasPWANmJHpvbX4TPrU++T+HuX1A0R5Gsw5lVPA0yEH\noNQNEodxA3vWE3A+Qsbtlpmn066238YdVCdQQwrUjMsrjJ8w6FKfnSWz8NxQyqbE\nwt2XtV0djuQl0gO67ZiB9qpODu3jckj4NURg8bf5rFojlEfIyY49fDt7zEzyZdGi\n5t2nXZHqw0pqAND+N3q4RRJyW9KkFzi5h5a50KUP4Ix350de8EhEe+7xczXBi3ho\ntZcuIxOhPupzIkmfliJk3QXcUvGaBTG/oD+85wsl/v/qPisEsYymf4LfXkUWk+sJ\nAvtS9Ixz9ts7nHktt3z5kOXp2jQbh2GhRwbI7qc7rgxtiDNi8nhhJ+BFSCjMHV8c\n47GT3XVGqQ88OlLKkewqaBECAwEAAQ==\n-----END PUBLIC KEY-----\n"
+              }
+            ],
+            "state": "ENABLED",
+            "version": 1
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "google_project",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_network": null,
+            "billing_account": "013688-510026-6ADA75",
+            "effective_labels": {},
+            "folder_id": "804082179653",
+            "id": "projects/trust-kat-dev",
+            "labels": {},
+            "name": "trust-kat-dev",
+            "number": "983602622234",
+            "org_id": "",
+            "project_id": "trust-kat-dev",
+            "skip_delete": null,
+            "terraform_labels": {}
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "google_project",
+      "name": "project",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_network": null,
+            "billing_account": "013688-510026-6ADA75",
+            "effective_labels": {},
+            "folder_id": "804082179653",
+            "id": "projects/trust-kat-dev",
+            "labels": {},
+            "name": "trust-kat-dev",
+            "number": "983602622234",
+            "org_id": "",
+            "project_id": "trust-kat-dev",
+            "skip_delete": null,
+            "terraform_labels": {}
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_artifact_registry_repository",
+      "name": "hello_word",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "cleanup_policies": [],
+            "cleanup_policy_dry_run": false,
+            "create_time": "2024-03-11T15:45:37.648519Z",
+            "description": "docker repository for sample hellow world app",
+            "docker_config": [],
+            "effective_labels": {},
+            "format": "DOCKER",
+            "id": "projects/trust-kat-dev/locations/us/repositories/my-repos",
+            "kms_key_name": "",
+            "labels": {},
+            "location": "us",
+            "maven_config": [],
+            "mode": "STANDARD_REPOSITORY",
+            "name": "my-repos",
+            "project": "trust-kat-dev",
+            "remote_repository_config": [],
+            "repository_id": "my-repos",
+            "terraform_labels": {},
+            "timeouts": null,
+            "update_time": "2024-03-14T17:00:32.236177Z",
+            "virtual_repository_config": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_binary_authorization_attestor",
+      "name": "attestor_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "attestation_authority_note": [
+              {
+                "delegation_service_account_email": "service-983602622234@gcp-sa-binaryauthorization.iam.gserviceaccount.com",
+                "note_reference": "projects/trust-kat-dev/notes/attestor-1-note",
+                "public_keys": [
+                  {
+                    "ascii_armored_pgp_public_key": "mQENBFtP0doBCADF+joTiXWKVuP8kJt3fgpBSjT9h8ezMfKA4aXZctYLx5wslWQl\nbB7Iu2ezkECNzoEeU7WxUe8a61pMCh9cisS9H5mB2K2uM4Jnf8tgFeXn3akJDVo0\noR1IC+Dp9mXbRSK3MAvKkOwWlG99sx3uEdvmeBRHBOO+grchLx24EThXFOyP9Fk6\nV39j6xMjw4aggLD15B4V0v9JqBDdJiIYFzszZDL6pJwZrzcP0z8JO4rTZd+f64bD\nMpj52j/pQfA8lZHOaAgb1OrthLdMrBAjoDjArV4Ek7vSbrcgYWcI6BhsQrFoxKdX\n83TZKai55ZCfCLIskwUIzA1NLVwyzCS+fSN/ABEBAAG0KCJUZXN0IEF0dGVzdG9y\nIiA8ZGFuYWhvZmZtYW5AZ29vZ2xlLmNvbT6JAU4EEwEIADgWIQRfWkqHt6hpTA1L\nuY060eeM4dc66AUCW0/R2gIbLwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRA6\n0eeM4dc66HdpCAC4ot3b0OyxPb0Ip+WT2U0PbpTBPJklesuwpIrM4Lh0N+1nVRLC\n51WSmVbM8BiAFhLbN9LpdHhds1kUrHF7+wWAjdR8sqAj9otc6HGRM/3qfa2qgh+U\nWTEk/3us/rYSi7T7TkMuutRMIa1IkR13uKiW56csEMnbOQpn9rDqwIr5R8nlZP5h\nMAU9vdm1DIv567meMqTaVZgR3w7bck2P49AO8lO5ERFpVkErtu/98y+rUy9d789l\n+OPuS1NGnxI1YKsNaWJF4uJVuvQuZ1twrhCbGNtVorO2U12+cEq+YtUxj7kmdOC1\nqoIRW6y0+UlAc+MbqfL0ziHDOAmcqz1GnROg\n=6Bvm\n",
+                    "comment": "",
+                    "id": "5F5A4A87B7A8694C0D4BB98D3AD1E78CE1D73AE8",
+                    "pkix_public_key": []
+                  }
+                ]
+              }
+            ],
+            "description": "",
+            "id": "projects/trust-kat-dev/attestors/attestor-1",
+            "name": "attestor-1",
+            "project": "trust-kat-dev",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_container_analysis_note.note_1"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_binary_authorization_attestor",
+      "name": "attestor_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "attestation_authority_note": [
+              {
+                "delegation_service_account_email": "service-983602622234@gcp-sa-binaryauthorization.iam.gserviceaccount.com",
+                "note_reference": "projects/trust-kat-dev/notes/attestor-2-note",
+                "public_keys": [
+                  {
+                    "ascii_armored_pgp_public_key": "",
+                    "comment": "",
+                    "id": "//cloudkms.googleapis.com/v1/projects/trust-kat-dev/locations/global/keyRings/attestor-keys/cryptoKeys/attestor-key/cryptoKeyVersions/1",
+                    "pkix_public_key": [
+                      {
+                        "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAx3fcw78QiUuio+zzdvgB\nQyifeaWpubE4vF+4aifq8oVuepKryWxGB5RuSVZsd9WvrezRe+0xPCAcGqWZ0r8C\ne8t68QznunpHOG8S8YEF8oLT8+Hjd+c1g+ClxV3gj9pvXrCzsFfL5yLhK19+JHf0\nKyczGyd0f/uTwcXxMclweLPkOTQcUsfxH5SQHCHr8oCjqKOFLFVelDrb6BSHtiKh\nzrNShh85eErnwee7XWt4NrVMs67v2kLYejJjhLX2JSM0ojO0H4TEGVIUPOM8RpcF\nw6C4I+m8Z9DfC5/yDfZ6wKasPWANmJHpvbX4TPrU++T+HuX1A0R5Gsw5lVPA0yEH\noNQNEodxA3vWE3A+Qsbtlpmn066238YdVCdQQwrUjMsrjJ8w6FKfnSWz8NxQyqbE\nwt2XtV0djuQl0gO67ZiB9qpODu3jckj4NURg8bf5rFojlEfIyY49fDt7zEzyZdGi\n5t2nXZHqw0pqAND+N3q4RRJyW9KkFzi5h5a50KUP4Ix350de8EhEe+7xczXBi3ho\ntZcuIxOhPupzIkmfliJk3QXcUvGaBTG/oD+85wsl/v/qPisEsYymf4LfXkUWk+sJ\nAvtS9Ixz9ts7nHktt3z5kOXp2jQbh2GhRwbI7qc7rgxtiDNi8nhhJ+BFSCjMHV8c\n47GT3XVGqQ88OlLKkewqaBECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+                        "signature_algorithm": "RSA_SIGN_PKCS1_4096_SHA512"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "description": "",
+            "id": "projects/trust-kat-dev/attestors/attestor-2",
+            "name": "attestor-2",
+            "project": "trust-kat-dev",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "data.google_kms_crypto_key_version.version",
+            "google_container_analysis_note.note_2",
+            "google_kms_crypto_key.attestor-key",
+            "google_kms_key_ring.attestor-keys"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_binary_authorization_policy",
+      "name": "policy_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "admission_whitelist_patterns": [
+              {
+                "name_pattern": "gcr.io/google_containers/*"
+              }
+            ],
+            "cluster_admission_rules": [],
+            "default_admission_rule": [
+              {
+                "enforcement_mode": "ENFORCED_BLOCK_AND_AUDIT_LOG",
+                "evaluation_mode": "ALWAYS_ALLOW",
+                "require_attestations_by": []
+              }
+            ],
+            "description": "",
+            "global_policy_evaluation_mode": "ENABLE",
+            "id": "projects/trust-kat-dev",
+            "project": "trust-kat-dev",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_cloud_run_v2_service",
+      "name": "sample-app",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "annotations": {},
+            "binary_authorization": [
+              {
+                "breakglass_justification": "bypassing binary auth",
+                "use_default": true
+              }
+            ],
+            "client": "",
+            "client_version": "",
+            "conditions": [
+              {
+                "execution_reason": "",
+                "last_transition_time": "2024-03-13T20:15:27.163881Z",
+                "message": "",
+                "reason": "",
+                "revision_reason": "",
+                "severity": "",
+                "state": "CONDITION_SUCCEEDED",
+                "type": "RoutesReady"
+              },
+              {
+                "execution_reason": "",
+                "last_transition_time": "2024-03-13T20:15:18.144303Z",
+                "message": "",
+                "reason": "",
+                "revision_reason": "",
+                "severity": "",
+                "state": "CONDITION_SUCCEEDED",
+                "type": "ConfigurationsReady"
+              }
+            ],
+            "create_time": "2024-03-13T20:15:18.040657Z",
+            "creator": "kat@trustoncloud.com",
+            "custom_audiences": [],
+            "delete_time": "",
+            "description": "",
+            "effective_annotations": {},
+            "effective_labels": {},
+            "etag": "\"CNaSyK8GEOjAsRM/cHJvamVjdHMvdHJ1c3Qta2F0LWRldi9sb2NhdGlvbnMvdXMtY2VudHJhbDEvc2VydmljZXMvc2FtcGxlLWFwcA\"",
+            "expire_time": "",
+            "generation": "1",
+            "id": "projects/trust-kat-dev/locations/us-central1/services/sample-app",
+            "ingress": "INGRESS_TRAFFIC_INTERNAL_ONLY",
+            "labels": {},
+            "last_modifier": "kat@trustoncloud.com",
+            "latest_created_revision": "projects/trust-kat-dev/locations/us-central1/services/sample-app/revisions/sample-app-00001-j9c",
+            "latest_ready_revision": "projects/trust-kat-dev/locations/us-central1/services/sample-app/revisions/sample-app-00001-j9c",
+            "launch_stage": "GA",
+            "location": "us-central1",
+            "name": "sample-app",
+            "observed_generation": "1",
+            "project": "trust-kat-dev",
+            "reconciling": false,
+            "template": [
+              {
+                "annotations": {},
+                "containers": [
+                  {
+                    "args": [],
+                    "command": [],
+                    "depends_on": [],
+                    "env": [
+                      {
+                        "name": "PROJECT_ID",
+                        "value": "trust-kat-dev",
+                        "value_source": []
+                      }
+                    ],
+                    "image": "us-docker.pkg.dev/trust-kat-dev/my-repos/helloworld-gke:latest",
+                    "liveness_probe": [],
+                    "name": "",
+                    "ports": [
+                      {
+                        "container_port": 8080,
+                        "name": "http1"
+                      }
+                    ],
+                    "resources": [
+                      {
+                        "cpu_idle": true,
+                        "limits": {
+                          "cpu": "1000m",
+                          "memory": "512Mi"
+                        },
+                        "startup_cpu_boost": false
+                      }
+                    ],
+                    "startup_probe": [
+                      {
+                        "failure_threshold": 1,
+                        "grpc": [],
+                        "http_get": [],
+                        "initial_delay_seconds": 0,
+                        "period_seconds": 240,
+                        "tcp_socket": [
+                          {
+                            "port": 8080
+                          }
+                        ],
+                        "timeout_seconds": 240
+                      }
+                    ],
+                    "volume_mounts": [],
+                    "working_dir": ""
+                  }
+                ],
+                "encryption_key": "",
+                "execution_environment": "",
+                "labels": {},
+                "max_instance_request_concurrency": 80,
+                "revision": "",
+                "scaling": [
+                  {
+                    "max_instance_count": 100,
+                    "min_instance_count": 0
+                  }
+                ],
+                "service_account": "983602622234-compute@developer.gserviceaccount.com",
+                "session_affinity": false,
+                "timeout": "300s",
+                "volumes": [],
+                "vpc_access": []
+              }
+            ],
+            "terminal_condition": [
+              {
+                "execution_reason": "",
+                "last_transition_time": "2024-03-13T20:15:27.208612Z",
+                "message": "",
+                "reason": "",
+                "revision_reason": "",
+                "severity": "",
+                "state": "CONDITION_SUCCEEDED",
+                "type": "Ready"
+              }
+            ],
+            "terraform_labels": {},
+            "timeouts": null,
+            "traffic": [
+              {
+                "percent": 100,
+                "revision": "",
+                "tag": "",
+                "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST"
+              }
+            ],
+            "traffic_statuses": [
+              {
+                "percent": 100,
+                "revision": "",
+                "tag": "",
+                "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST",
+                "uri": ""
+              }
+            ],
+            "uid": "6fe49b0c-b754-495e-a6d1-aa305fab31cf",
+            "update_time": "2024-03-13T20:15:18.040657Z",
+            "uri": "https://sample-app-l7tggoxdpq-uc.a.run.app"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "google_artifact_registry_repository.hello_word"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_cloudbuild_trigger",
+      "name": "service-account-trigger",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "approval_config": [
+              {
+                "approval_required": false
+              }
+            ],
+            "bitbucket_server_trigger_config": [],
+            "build": [],
+            "create_time": "2024-03-11T15:49:59.111543410Z",
+            "description": "",
+            "disabled": false,
+            "filename": "cloudbuild.yaml",
+            "filter": "",
+            "git_file_source": [],
+            "github": [],
+            "id": "projects/trust-kat-dev/triggers/e2632ba1-2ce6-4444-a6ee-7180e8ae54c0",
+            "ignored_files": [],
+            "include_build_logs": "",
+            "included_files": [],
+            "location": "global",
+            "name": "trigger",
+            "project": "trust-kat-dev",
+            "pubsub_config": [],
+            "repository_event_config": [],
+            "service_account": "",
+            "source_to_build": [],
+            "substitutions": {},
+            "tags": [],
+            "timeouts": null,
+            "trigger_id": "e2632ba1-2ce6-4444-a6ee-7180e8ae54c0",
+            "trigger_template": [
+              {
+                "branch_name": "master",
+                "commit_sha": "",
+                "dir": "",
+                "invert_regex": false,
+                "project_id": "trust-kat-dev",
+                "repo_name": "kat-dummy-repo",
+                "tag_name": ""
+              }
+            ],
+            "webhook_config": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.cli.data.external.env_override",
+            "module.cli.null_resource.additional_components",
+            "module.cli.null_resource.additional_components_destroy",
+            "module.cli.null_resource.decompress",
+            "module.cli.null_resource.decompress_destroy",
+            "module.cli.null_resource.download_gcloud",
+            "module.cli.null_resource.download_jq",
+            "module.cli.null_resource.gcloud_auth_google_credentials",
+            "module.cli.null_resource.gcloud_auth_google_credentials_destroy",
+            "module.cli.null_resource.gcloud_auth_service_account_key_file",
+            "module.cli.null_resource.gcloud_auth_service_account_key_file_destroy",
+            "module.cli.null_resource.module_depends_on",
+            "module.cli.null_resource.prepare_cache",
+            "module.cli.null_resource.run_command",
+            "module.cli.null_resource.run_destroy_command",
+            "module.cli.null_resource.upgrade",
+            "module.cli.null_resource.upgrade_destroy",
+            "module.cli.random_id.cache"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_analysis_note",
+      "name": "note_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "attestation_authority": [
+              {
+                "hint": [
+                  {
+                    "human_readable_name": "Attestor 1 Note"
+                  }
+                ]
+              }
+            ],
+            "create_time": "2024-03-11T15:45:32.916969Z",
+            "expiration_time": "",
+            "id": "projects/trust-kat-dev/notes/attestor-1-note",
+            "kind": "ATTESTATION",
+            "long_description": "",
+            "name": "attestor-1-note",
+            "project": "trust-kat-dev",
+            "related_note_names": [],
+            "related_url": [],
+            "short_description": "",
+            "timeouts": null,
+            "update_time": "2024-03-11T15:45:32.916969Z"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_analysis_note",
+      "name": "note_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "attestation_authority": [
+              {
+                "hint": [
+                  {
+                    "human_readable_name": "Attestor Note"
+                  }
+                ]
+              }
+            ],
+            "create_time": "2024-03-11T15:45:19.274470Z",
+            "expiration_time": "",
+            "id": "projects/trust-kat-dev/notes/attestor-2-note",
+            "kind": "ATTESTATION",
+            "long_description": "",
+            "name": "attestor-2-note",
+            "project": "trust-kat-dev",
+            "related_note_names": [],
+            "related_url": [],
+            "short_description": "",
+            "timeouts": null,
+            "update_time": "2024-03-11T15:45:19.274470Z"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_container_cluster",
+      "name": "kat_cluster",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "addons_config": [
+              {
+                "cloudrun_config": [],
+                "config_connector_config": [],
+                "dns_cache_config": [
+                  {
+                    "enabled": true
+                  }
+                ],
+                "gce_persistent_disk_csi_driver_config": [
+                  {
+                    "enabled": true
+                  }
+                ],
+                "gcp_filestore_csi_driver_config": [
+                  {
+                    "enabled": true
+                  }
+                ],
+                "gcs_fuse_csi_driver_config": [
+                  {
+                    "enabled": true
+                  }
+                ],
+                "gke_backup_agent_config": [],
+                "horizontal_pod_autoscaling": [],
+                "http_load_balancing": [],
+                "network_policy_config": [
+                  {
+                    "disabled": true
+                  }
+                ]
+              }
+            ],
+            "allow_net_admin": null,
+            "authenticator_groups_config": [],
+            "binary_authorization": [
+              {
+                "enabled": false,
+                "evaluation_mode": "DISABLED"
+              }
+            ],
+            "cluster_autoscaling": [
+              {
+                "auto_provisioning_defaults": [
+                  {
+                    "boot_disk_kms_key": "",
+                    "disk_size": 0,
+                    "disk_type": "",
+                    "image_type": "COS_CONTAINERD",
+                    "management": [
+                      {
+                        "auto_repair": true,
+                        "auto_upgrade": true,
+                        "upgrade_options": []
+                      }
+                    ],
+                    "min_cpu_platform": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "service_account": "default",
+                    "shielded_instance_config": [],
+                    "upgrade_settings": [
+                      {
+                        "blue_green_settings": [],
+                        "max_surge": 1,
+                        "max_unavailable": 0,
+                        "strategy": "SURGE"
+                      }
+                    ]
+                  }
+                ],
+                "autoscaling_profile": "OPTIMIZE_UTILIZATION",
+                "enabled": true,
+                "resource_limits": [
+                  {
+                    "maximum": 1000000000,
+                    "minimum": 0,
+                    "resource_type": "cpu"
+                  },
+                  {
+                    "maximum": 1000000000,
+                    "minimum": 0,
+                    "resource_type": "memory"
+                  },
+                  {
+                    "maximum": 1000000000,
+                    "minimum": 0,
+                    "resource_type": "nvidia-tesla-t4"
+                  },
+                  {
+                    "maximum": 1000000000,
+                    "minimum": 0,
+                    "resource_type": "nvidia-tesla-a100"
+                  }
+                ]
+              }
+            ],
+            "cluster_ipv4_cidr": "10.54.0.0/17",
+            "confidential_nodes": [],
+            "cost_management_config": [],
+            "database_encryption": [
+              {
+                "key_name": "",
+                "state": "DECRYPTED"
+              }
+            ],
+            "datapath_provider": "ADVANCED_DATAPATH",
+            "default_max_pods_per_node": 110,
+            "default_snat_status": [
+              {
+                "disabled": false
+              }
+            ],
+            "deletion_protection": false,
+            "description": "",
+            "dns_config": [
+              {
+                "cluster_dns": "CLOUD_DNS",
+                "cluster_dns_domain": "cluster.local",
+                "cluster_dns_scope": "CLUSTER_SCOPE"
+              }
+            ],
+            "enable_autopilot": true,
+            "enable_intranode_visibility": true,
+            "enable_k8s_beta_apis": [],
+            "enable_kubernetes_alpha": false,
+            "enable_l4_ilb_subsetting": false,
+            "enable_legacy_abac": false,
+            "enable_shielded_nodes": true,
+            "enable_tpu": false,
+            "endpoint": "34.135.165.124",
+            "fleet": [],
+            "gateway_api_config": [
+              {
+                "channel": "CHANNEL_STANDARD"
+              }
+            ],
+            "id": "projects/trust-kat-dev/locations/us-central1/clusters/kat-binaryauthz",
+            "identity_service_config": [],
+            "initial_node_count": 1,
+            "ip_allocation_policy": [
+              {
+                "additional_pod_ranges_config": [],
+                "cluster_ipv4_cidr_block": "10.54.0.0/17",
+                "cluster_secondary_range_name": "gke-kat-binaryauthz-pods-61d77fe8",
+                "pod_cidr_overprovision_config": [
+                  {
+                    "disabled": false
+                  }
+                ],
+                "services_ipv4_cidr_block": "34.118.224.0/20",
+                "services_secondary_range_name": "",
+                "stack_type": "IPV4"
+              }
+            ],
+            "label_fingerprint": "a9dc16a7",
+            "location": "us-central1",
+            "logging_config": [
+              {
+                "enable_components": [
+                  "SYSTEM_COMPONENTS",
+                  "WORKLOADS"
+                ]
+              }
+            ],
+            "logging_service": "logging.googleapis.com/kubernetes",
+            "maintenance_policy": [],
+            "master_auth": [
+              {
+                "client_certificate": "",
+                "client_certificate_config": [
+                  {
+                    "issue_client_certificate": false
+                  }
+                ],
+                "client_key": "",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQUlmSHc2NTl6K01mN3BPNjdiRE84WTR3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1ltTTFNbVkwWmpndFltTmtNeTAwWm1Jd0xXSmhNamN0WVdZMU5XSTVaalppTlRObApNQ0FYRFRJME1ETXhOVEU0TkRNeU1Wb1lEekl3TlRRd016QTRNVGswTXpJeFdqQXZNUzB3S3dZRFZRUURFeVJpCll6VXlaalJtT0MxaVkyUXpMVFJtWWpBdFltRXlOeTFoWmpVMVlqbG1ObUkxTTJVd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FERGdPYmdHYXFvWFpPblFJL1ZYWVNXaFE5S2lPaUJCNURiL0lxegoxRVNzeVBNVTZqL3djNkcrWE9Ob25XZm1abmlpeWZ4UzVGeFhiaEYwRGFoa0NVVm1vNmR6TUJaekg1dXJTQU9mClB6cVFkUnZQNnRMemtpR0RybGNMVHFudkVhaTQ1aDg0MWs4alp4dFgyZktxOFFEUDZodXp4d2Jqc2hGWW52dlAKaVBHWXVwbGxvMmFBMXdtdVkxdmhFQ1FSQ21YTUFiT0NiY2JGamtwNlhCMFpLbnMvVXFDQ3ZxSGhSS09KUDAxaQprR0RUenp1ZTdwU094OWpyMUtvQ3kzb0x1K25PUENhSkhkMFpPY3Y2YkF1ekJGYjdFWDJreXZnN0hjQUxkMDdTCmMzaUNFcGl6eW1kL2NrZlRGdTlDd3p4d1JTcmdXZ0JHcFBNZ2NCSm9YcE9RNGd6ZVZseTlnblU1c3JBbWJqbVMKamdsMTZ3K2pKRkxlQm14bTdjQXdmdFFFcjBoVkw2dlNwLzFnMWE0WTR3bHRUaWRkTUdhU3Y1N0g1bDhKYzFqbApzdkJuaG1XWWNQZDFpVnNjaVpxTnlaTitXWG5jTGlzNFVmcnZRRWY2ZHNLeFIxNzVIQ0dFVTVMbnRFaFFkNU1DCnBhYWN2MzQwQ0N3RWNRdTVOSHZJZzh5dUNURUNBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGTktjZkY5aEdQcmFDeWZrY2wxMWFkcHppVjM5TUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQW5BVythUEQ4Vk1uVExSbC9iMEk0QVBGZUNxOFVPUElnaG1MNmx1bE9CCkZpSlc0clBiTGNRT2hqeVd1enp5ZjIvMURQMUFLMmNZcGI5SlEzRGdwUUZOL21tSFE2RjZEWmhSMmt1aEN2M3oKYktiRHpPaG9BVXpteVc4dHNxWVk2Rzg0ZklNSmkvSFhDWHVmT3pJcVdvUXcvRU9qTXJnczJicnFRS2tPNUM1bQpPenRCSVI2dC81Y2E0KzJwOGEyVG5kSkJUTnpseHExUHRNSE5sOFBEb0t2bkR1bVB0SmRkYW4yQUtlbzg5QkZmCnlTNmJlQy83YnJ0L1JPbVhiSE9EYU5qZ0lWL3UvSDhoQlFUT2o0MStVVmU4V2dDSjFvOXQ3Yy9YR2tncFBwNnoKLzZWRldqM3ppdGd4ak1lOWYyQzFJVTFMNGtXbWpRcEIxemE1QW1TUE1tU3VYcURmZ1VzS0p2VEpkSjN1emRZLwo1czdxdUNjeXhEQkxOYW84Rzd4dnRxQXNKUlhaRjFIL3RqeUFaWU16b0luRGMvT1MzRUphREVJQ1hnenM3emE4Ckh5SitRbnpRUUZOOWRqU0VtYXR0UHVjT2oyL1RKNTN5MjlHOVZSTzNTdS9uc0pJZkQ3cndGWHZWY2ZQZGpIWUYKU0lHK20vdWNSSHBkTzlvcUYxTWc5QnM9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+              }
+            ],
+            "master_authorized_networks_config": [],
+            "master_version": "1.27.8-gke.1067004",
+            "mesh_certificates": [],
+            "min_master_version": null,
+            "monitoring_config": [
+              {
+                "advanced_datapath_observability_config": [
+                  {
+                    "enable_metrics": true,
+                    "enable_relay": false,
+                    "relay_mode": "DISABLED"
+                  }
+                ],
+                "enable_components": [
+                  "SYSTEM_COMPONENTS",
+                  "STORAGE",
+                  "HPA",
+                  "POD",
+                  "DAEMONSET",
+                  "DEPLOYMENT",
+                  "STATEFULSET"
+                ],
+                "managed_prometheus": [
+                  {
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "monitoring_service": "monitoring.googleapis.com/kubernetes",
+            "name": "kat-binaryauthz",
+            "network": "projects/trust-kat-dev/global/networks/vpc-01",
+            "network_policy": [
+              {
+                "enabled": false,
+                "provider": "PROVIDER_UNSPECIFIED"
+              }
+            ],
+            "networking_mode": "VPC_NATIVE",
+            "node_config": [
+              {
+                "advanced_machine_features": [],
+                "boot_disk_kms_key": "",
+                "confidential_nodes": [],
+                "disk_size_gb": 100,
+                "disk_type": "pd-balanced",
+                "effective_taints": [
+                  {
+                    "effect": "NO_SCHEDULE",
+                    "key": "cloud.google.com/gke-quick-remove",
+                    "value": "true"
+                  }
+                ],
+                "enable_confidential_storage": false,
+                "ephemeral_storage_local_ssd_config": [],
+                "fast_socket": [],
+                "gcfs_config": [],
+                "guest_accelerator": [],
+                "gvnic": [],
+                "host_maintenance_policy": [],
+                "image_type": "COS_CONTAINERD",
+                "kubelet_config": [],
+                "labels": {},
+                "linux_node_config": [],
+                "local_nvme_ssd_block_config": [],
+                "local_ssd_count": 0,
+                "logging_variant": "DEFAULT",
+                "machine_type": "e2-small",
+                "metadata": {
+                  "disable-legacy-endpoints": "true"
+                },
+                "min_cpu_platform": "",
+                "node_group": "",
+                "oauth_scopes": [
+                  "https://www.googleapis.com/auth/devstorage.read_only",
+                  "https://www.googleapis.com/auth/logging.write",
+                  "https://www.googleapis.com/auth/monitoring",
+                  "https://www.googleapis.com/auth/service.management.readonly",
+                  "https://www.googleapis.com/auth/servicecontrol",
+                  "https://www.googleapis.com/auth/trace.append"
+                ],
+                "preemptible": false,
+                "reservation_affinity": [
+                  {
+                    "consume_reservation_type": "NO_RESERVATION",
+                    "key": "",
+                    "values": []
+                  }
+                ],
+                "resource_labels": {},
+                "resource_manager_tags": {},
+                "service_account": "default",
+                "shielded_instance_config": [
+                  {
+                    "enable_integrity_monitoring": true,
+                    "enable_secure_boot": true
+                  }
+                ],
+                "sole_tenant_config": [],
+                "spot": false,
+                "tags": [],
+                "taint": [],
+                "workload_metadata_config": [
+                  {
+                    "mode": "GKE_METADATA"
+                  }
+                ]
+              }
+            ],
+            "node_locations": [
+              "us-central1-a",
+              "us-central1-b",
+              "us-central1-c",
+              "us-central1-f"
+            ],
+            "node_pool": [
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 1,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "default-pool",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [
+                      {
+                        "effect": "NO_SCHEDULE",
+                        "key": "cloud.google.com/gke-quick-remove",
+                        "value": "true"
+                      }
+                    ],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-small",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-c"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              },
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 0,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "pool-1",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-medium",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-a",
+                  "us-central1-b",
+                  "us-central1-c",
+                  "us-central1-f"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              },
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 0,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "pool-2",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-standard-2",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-a",
+                  "us-central1-b",
+                  "us-central1-c",
+                  "us-central1-f"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              },
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 0,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "pool-3",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-standard-4",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-a",
+                  "us-central1-b",
+                  "us-central1-c",
+                  "us-central1-f"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              },
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 0,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "pool-4",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-standard-8",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-a",
+                  "us-central1-b",
+                  "us-central1-c",
+                  "us-central1-f"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              },
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 0,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "pool-5",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-standard-16",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-a",
+                  "us-central1-b",
+                  "us-central1-c",
+                  "us-central1-f"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              },
+              {
+                "autoscaling": [
+                  {
+                    "location_policy": "BALANCED",
+                    "max_node_count": 1000,
+                    "min_node_count": 0,
+                    "total_max_node_count": 0,
+                    "total_min_node_count": 0
+                  }
+                ],
+                "initial_node_count": 0,
+                "instance_group_urls": [],
+                "managed_instance_group_urls": [],
+                "management": [
+                  {
+                    "auto_repair": true,
+                    "auto_upgrade": true
+                  }
+                ],
+                "max_pods_per_node": 32,
+                "name": "pool-6",
+                "name_prefix": "",
+                "network_config": [
+                  {
+                    "create_pod_range": false,
+                    "enable_private_nodes": false,
+                    "network_performance_config": [],
+                    "pod_cidr_overprovision_config": [],
+                    "pod_ipv4_cidr_block": "10.54.0.0/17",
+                    "pod_range": "gke-kat-binaryauthz-pods-61d77fe8"
+                  }
+                ],
+                "node_config": [
+                  {
+                    "advanced_machine_features": [],
+                    "boot_disk_kms_key": "",
+                    "confidential_nodes": [],
+                    "disk_size_gb": 100,
+                    "disk_type": "pd-balanced",
+                    "effective_taints": [],
+                    "enable_confidential_storage": false,
+                    "ephemeral_storage_local_ssd_config": [],
+                    "fast_socket": [],
+                    "gcfs_config": [],
+                    "guest_accelerator": [],
+                    "gvnic": [],
+                    "host_maintenance_policy": [],
+                    "image_type": "COS_CONTAINERD",
+                    "kubelet_config": [],
+                    "labels": {},
+                    "linux_node_config": [],
+                    "local_nvme_ssd_block_config": [],
+                    "local_ssd_count": 0,
+                    "logging_variant": "DEFAULT",
+                    "machine_type": "e2-standard-32",
+                    "metadata": {
+                      "disable-legacy-endpoints": "true"
+                    },
+                    "min_cpu_platform": "",
+                    "node_group": "",
+                    "oauth_scopes": [
+                      "https://www.googleapis.com/auth/devstorage.read_only",
+                      "https://www.googleapis.com/auth/logging.write",
+                      "https://www.googleapis.com/auth/monitoring",
+                      "https://www.googleapis.com/auth/service.management.readonly",
+                      "https://www.googleapis.com/auth/servicecontrol",
+                      "https://www.googleapis.com/auth/trace.append"
+                    ],
+                    "preemptible": false,
+                    "reservation_affinity": [
+                      {
+                        "consume_reservation_type": "NO_RESERVATION",
+                        "key": "",
+                        "values": []
+                      }
+                    ],
+                    "resource_labels": {},
+                    "resource_manager_tags": {},
+                    "service_account": "default",
+                    "shielded_instance_config": [
+                      {
+                        "enable_integrity_monitoring": true,
+                        "enable_secure_boot": true
+                      }
+                    ],
+                    "sole_tenant_config": [],
+                    "spot": false,
+                    "tags": [],
+                    "taint": [],
+                    "workload_metadata_config": [
+                      {
+                        "mode": "GKE_METADATA"
+                      }
+                    ]
+                  }
+                ],
+                "node_count": 0,
+                "node_locations": [
+                  "us-central1-a",
+                  "us-central1-b",
+                  "us-central1-c",
+                  "us-central1-f"
+                ],
+                "placement_policy": [],
+                "upgrade_settings": [
+                  {
+                    "blue_green_settings": [],
+                    "max_surge": 1,
+                    "max_unavailable": 0,
+                    "strategy": "SURGE"
+                  }
+                ],
+                "version": "1.27.8-gke.1067004"
+              }
+            ],
+            "node_pool_auto_config": [],
+            "node_pool_defaults": [
+              {
+                "node_config_defaults": [
+                  {
+                    "logging_variant": "DEFAULT"
+                  }
+                ]
+              }
+            ],
+            "node_version": "1.27.8-gke.1067004",
+            "notification_config": [
+              {
+                "pubsub": [
+                  {
+                    "enabled": false,
+                    "filter": [],
+                    "topic": ""
+                  }
+                ]
+              }
+            ],
+            "operation": null,
+            "private_cluster_config": [
+              {
+                "enable_private_endpoint": false,
+                "enable_private_nodes": false,
+                "master_global_access_config": [
+                  {
+                    "enabled": false
+                  }
+                ],
+                "master_ipv4_cidr_block": "",
+                "peering_name": "",
+                "private_endpoint": "10.128.0.5",
+                "private_endpoint_subnetwork": "",
+                "public_endpoint": "34.135.165.124"
+              }
+            ],
+            "private_ipv6_google_access": "",
+            "project": "trust-kat-dev",
+            "release_channel": [
+              {
+                "channel": "REGULAR"
+              }
+            ],
+            "remove_default_node_pool": null,
+            "resource_labels": null,
+            "resource_usage_export_config": [],
+            "security_posture_config": [
+              {
+                "mode": "BASIC",
+                "vulnerability_mode": "VULNERABILITY_BASIC"
+              }
+            ],
+            "self_link": "https://container.googleapis.com/v1/projects/trust-kat-dev/locations/us-central1/clusters/kat-binaryauthz",
+            "service_external_ips_config": [
+              {
+                "enabled": false
+              }
+            ],
+            "services_ipv4_cidr": "34.118.224.0/20",
+            "subnetwork": "projects/trust-kat-dev/regions/us-central1/subnetworks/vpc-01",
+            "timeouts": null,
+            "tpu_ipv4_cidr_block": "",
+            "vertical_pod_autoscaling": [
+              {
+                "enabled": true
+              }
+            ],
+            "workload_identity_config": [
+              {
+                "workload_pool": "trust-kat-dev.svc.id.goog"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoyNDAwMDAwMDAwMDAwLCJkZWxldGUiOjI0MDAwMDAwMDAwMDAsInJlYWQiOjI0MDAwMDAwMDAwMDAsInVwZGF0ZSI6MzYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMiJ9",
+          "dependencies": [
+            "module.network_vpc.google_compute_network.network",
+            "module.network_vpc.google_compute_shared_vpc_host_project.shared_vpc_host"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_kms_crypto_key",
+      "name": "attestor-key",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "destroy_scheduled_duration": "2592000s",
+            "effective_labels": {},
+            "id": "projects/trust-kat-dev/locations/global/keyRings/attestor-keys/cryptoKeys/attestor-key",
+            "import_only": false,
+            "key_ring": "projects/trust-kat-dev/locations/global/keyRings/attestor-keys",
+            "labels": {},
+            "name": "attestor-key",
+            "primary": [],
+            "purpose": "ASYMMETRIC_SIGN",
+            "rotation_period": "",
+            "skip_initial_version_creation": false,
+            "terraform_labels": {},
+            "timeouts": null,
+            "version_template": [
+              {
+                "algorithm": "RSA_SIGN_PKCS1_4096_SHA512",
+                "protection_level": "SOFTWARE"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "google_kms_key_ring.attestor-keys"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_kms_key_ring",
+      "name": "attestor-keys",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "projects/trust-kat-dev/locations/global/keyRings/attestor-keys",
+            "location": "global",
+            "name": "attestor-keys",
+            "project": "trust-kat-dev",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_audit_config",
+      "name": "deploymentall-services",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "audit_log_config": [
+              {
+                "exempted_members": [],
+                "log_type": "ADMIN_READ"
+              },
+              {
+                "exempted_members": [],
+                "log_type": "DATA_READ"
+              },
+              {
+                "exempted_members": [],
+                "log_type": "DATA_WRITE"
+              }
+            ],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/audit_config/allServices",
+            "project": "trust-kat-dev",
+            "service": "allServices"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "default_cb_sa_artifactReg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/roles/artifactregistry.createOnPushWriter/serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "member": "serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "role": "roles/artifactregistry.createOnPushWriter"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.google_project.current",
+            "data.google_project.project"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "default_cb_sa_binauthviewer",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/roles/binaryauthorization.attestorsViewer/serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "member": "serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "role": "roles/binaryauthorization.attestorsViewer"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.google_project.current",
+            "data.google_project.project"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "default_cb_sa_gke",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/roles/container.developer/serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "member": "serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "role": "roles/container.developer"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.google_project.current",
+            "data.google_project.project"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "default_cb_sa_kmssignerifier",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/roles/cloudkms.signerVerifier/serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "member": "serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "role": "roles/cloudkms.signerVerifier"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.google_project.current",
+            "data.google_project.project"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "default_cb_sa_notewriter",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/roles/containeranalysis.notes.attacher/serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "member": "serviceAccount:983602622234@cloudbuild.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "role": "roles/containeranalysis.notes.attacher"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.google_project.current",
+            "data.google_project.project"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_iam_member",
+      "name": "gke_node_permissions",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "condition": [],
+            "etag": "BwYTZG8J8oo=",
+            "id": "trust-kat-dev/roles/monitoring.editor/serviceAccount:gke-node-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "member": "serviceAccount:gke-node-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "role": "roles/monitoring.editor"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "google_service_account.gke_node_sa"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_project_service",
+      "name": "enable_project_apis",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/compute.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "compute.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 1,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/iam.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "iam.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 2,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/iamcredentials.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "iamcredentials.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 3,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/logging.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "logging.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 4,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/pubsub.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "pubsub.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 5,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/secretmanager.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "secretmanager.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 6,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/compute.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "compute.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 7,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/iam.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "iam.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 8,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/cloudresourcemanager.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "cloudresourcemanager.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 9,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/cloudbilling.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "cloudbilling.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 10,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/storage-api.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "storage-api.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 11,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/serviceusage.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "serviceusage.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 12,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/cloudbuild.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "cloudbuild.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 13,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/clouddeploy.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "clouddeploy.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 14,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/pubsub.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "pubsub.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 15,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/containerregistry.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "containerregistry.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 16,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/iamcredentials.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "iamcredentials.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 17,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/sourcerepo.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "sourcerepo.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 18,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/artifactregistry.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "artifactregistry.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 19,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/containeranalysis.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "containeranalysis.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 20,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/cloudkms.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "cloudkms.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 21,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/binaryauthorization.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "binaryauthorization.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 22,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/containerscanning.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "containerscanning.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 23,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/container.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "container.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 24,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/cloudtrace.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "cloudtrace.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 25,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/monitoring.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "monitoring.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        },
+        {
+          "index_key": 26,
+          "schema_version": 0,
+          "attributes": {
+            "disable_dependent_services": null,
+            "disable_on_destroy": false,
+            "id": "trust-kat-dev/logging.googleapis.com",
+            "project": "trust-kat-dev",
+            "service": "logging.googleapis.com",
+            "timeouts": {
+              "create": "30m",
+              "delete": null,
+              "read": null,
+              "update": "40m"
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInJlYWQiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjoyNDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_service_account",
+      "name": "attestation",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "attestation-sa",
+            "create_ignore_already_exists": null,
+            "description": "",
+            "disabled": false,
+            "display_name": "SA to retrieve image attestations",
+            "email": "attestation-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "id": "projects/trust-kat-dev/serviceAccounts/attestation-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "member": "serviceAccount:attestation-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "name": "projects/trust-kat-dev/serviceAccounts/attestation-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "timeouts": null,
+            "unique_id": "116835031517713821660"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9fQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_service_account",
+      "name": "gke_node_sa",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "gke-node-sa",
+            "create_ignore_already_exists": null,
+            "description": "",
+            "disabled": false,
+            "display_name": "Service Account run the GKE nodes as",
+            "email": "gke-node-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "id": "projects/trust-kat-dev/serviceAccounts/gke-node-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "member": "serviceAccount:gke-node-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "name": "projects/trust-kat-dev/serviceAccounts/gke-node-sa@trust-kat-dev.iam.gserviceaccount.com",
+            "project": "trust-kat-dev",
+            "timeouts": null,
+            "unique_id": "108266545762093305352"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9fQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "google_sourcerepo_repository",
+      "name": "my_repo",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "projects/trust-kat-dev/repos/kat-dummy-repo",
+            "name": "kat-dummy-repo",
+            "project": "trust-kat-dev",
+            "pubsub_configs": [],
+            "size": 22413,
+            "timeouts": null,
+            "url": "https://source.developers.google.com/p/trust-kat-dev/r/kat-dummy-repo"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "module": "module.cli",
+      "mode": "data",
+      "type": "external",
+      "name": "env_override",
+      "provider": "provider[\"registry.terraform.io/hashicorp/external\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "id": "-",
+            "program": [
+              ".terraform/modules/cli/scripts/check_env.sh"
+            ],
+            "query": {},
+            "result": {
+              "download": ""
+            },
+            "working_dir": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.cli",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "run_command",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "id": "2778783975589014865",
+            "triggers": {
+              "arguments": "ebd1bd5546fabd49bb66f0d791df92f5",
+              "create_cmd_body": "builds submit ./binauthz-attestation --config ./binauthz-attestation/cloudbuild.yaml --project trust-kat-dev",
+              "create_cmd_entrypoint": "gcloud",
+              "gcloud_bin_abs_path": "/google-cloud-sdk/bin",
+              "md5": "7f22bf39aaf5ce5980111c3587bef5b5"
+            }
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.cli.data.external.env_override",
+            "module.cli.null_resource.additional_components",
+            "module.cli.null_resource.decompress",
+            "module.cli.null_resource.download_gcloud",
+            "module.cli.null_resource.download_jq",
+            "module.cli.null_resource.gcloud_auth_google_credentials",
+            "module.cli.null_resource.gcloud_auth_service_account_key_file",
+            "module.cli.null_resource.module_depends_on",
+            "module.cli.null_resource.prepare_cache",
+            "module.cli.null_resource.upgrade",
+            "module.cli.random_id.cache"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cli",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "run_destroy_command",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 0,
+          "attributes": {
+            "id": "1118995800136457879",
+            "triggers": {
+              "destroy_cmd_body": "info",
+              "destroy_cmd_entrypoint": "gcloud",
+              "gcloud_bin_abs_path": "/google-cloud-sdk/bin"
+            }
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.cli.data.external.env_override",
+            "module.cli.null_resource.additional_components",
+            "module.cli.null_resource.decompress",
+            "module.cli.null_resource.download_gcloud",
+            "module.cli.null_resource.download_jq",
+            "module.cli.null_resource.gcloud_auth_google_credentials",
+            "module.cli.null_resource.gcloud_auth_service_account_key_file",
+            "module.cli.null_resource.module_depends_on",
+            "module.cli.null_resource.prepare_cache",
+            "module.cli.null_resource.upgrade",
+            "module.cli.random_id.cache"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.network_vpc",
+      "mode": "managed",
+      "type": "google_compute_network",
+      "name": "network",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_subnetworks": true,
+            "delete_default_routes_on_create": false,
+            "description": "",
+            "enable_ula_internal_ipv6": false,
+            "gateway_ipv4": "",
+            "id": "projects/trust-kat-dev/global/networks/vpc-01",
+            "internal_ipv6_range": "",
+            "mtu": 0,
+            "name": "vpc-01",
+            "network_firewall_policy_enforcement_order": "AFTER_CLASSIC_FIREWALL",
+            "numeric_id": "8330796738315196927",
+            "project": "trust-kat-dev",
+            "routing_mode": "GLOBAL",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/trust-kat-dev/global/networks/vpc-01",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
