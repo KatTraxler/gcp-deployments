@@ -15,6 +15,7 @@ module "call_deploy_job" {
 
 module "call_deploy_service" {
     source  = "./modules/cloud-run-service"
+    project_id = var.project_id
+    region = var.region
     
-
 }

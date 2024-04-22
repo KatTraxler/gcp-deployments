@@ -35,10 +35,10 @@ resource "google_cloud_run_v2_service" "cloudrun-service" {
 
 resource "google_cloud_run_service" "cloudrun-service-v1" {
   name     = "cloudrun-srv-v1"
-  location = "us-central1"
+  location = var.region
 
   metadata {
-    namespace = "trust-kat-dev"
+    namespace = var.project_id
   }
 
   template {
@@ -52,11 +52,11 @@ resource "google_cloud_run_service" "cloudrun-service-v1" {
 
 
 resource "google_cloud_run_domain_mapping" "my-domain-mapping" {
-  location = "us-central1"
-  name     = "kattraxler.cloud"
+  location = var.region
+  name     = "run.toctesting.com"
 
   metadata {
-    namespace = "trust-kat-dev"
+    namespace = var.project_id
   }
 
   spec {
