@@ -22,7 +22,7 @@ steps:
       - $_SERVICE_NAME
       - '--platform=managed'
       - '--service-account=$PROJECT_NUMBER-compute@developer.gserviceaccount.com'
-      - '--image=$_GCR_HOSTNAME.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
+      - '--image=$_GCR_HOSTNAME.docker.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
       - '--labels=managed-by=gcp-cloud-build-deploy-cloud-run'
       - '--region=$_DEPLOY_REGION'
       - '--project=$PROJECT_ID'
@@ -30,7 +30,7 @@ steps:
     id: Deploy
     entrypoint: gcloud
 images:
-  - '$_GCR_HOSTNAME.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
+  - '$_GCR_HOSTNAME.docker.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
 options:
   substitutionOption: ALLOW_LOOSE
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
