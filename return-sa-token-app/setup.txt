@@ -1,0 +1,2 @@
+To install deps:
+pip install flask aws-requests-auth request requests-aws4auth
