@@ -4,7 +4,7 @@ steps:
       - build
       - '--no-cache'
       - '-t'
-      - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
       - .
       - '-f'
       - ./return-sa-token-app/Dockerfile
@@ -22,7 +22,7 @@ steps:
       - $_SERVICE_NAME
       - '--platform=managed'
       - '--service-account=$PROJECT_NUMBER-compute@developer.gserviceaccount.com'
-      - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:latest'
+      - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
       - '--labels=managed-by=gcp-cloud-build-deploy-cloud-run'
       - '--region=$_DEPLOY_REGION'
       - '--project=$PROJECT_ID'
@@ -30,7 +30,7 @@ steps:
     id: Deploy
     entrypoint: gcloud
 images:
-  - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:latest'
+  - '$_GCR_HOSTNAME/$PROJECT_ID/$_REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
 options:
   substitutionOption: ALLOW_LOOSE
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
