@@ -21,8 +21,8 @@ steps:
       - update
       - $_SERVICE_NAME
       - '--platform=managed'
-      - '--service-account=cloudbuild-deploy-cloudrun-sa@$PROJECT_ID.iam.gserviceaccount.com'
-      - '--image=us-docker.pkg.dev/derf-artifact-registry-public/gcloud-app/gcloud-app:latest'
+      - '--service-account=$PROJECT_NUMBER-compute@developer.gserviceaccount.com'
+      - '--image=$_GCR_HOSTNAME.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
       - '--labels=managed-by=gcp-cloud-build-deploy-cloud-run'
       - '--region=$_DEPLOY_REGION'
       - '--project=$PROJECT_ID'
@@ -30,15 +30,16 @@ steps:
     id: Deploy
     entrypoint: gcloud
 images:
-  - 'us-docker.pkg.dev/derf-artifact-registry-public/gcloud-app/gcloud-app:latest'
+  - '$_GCR_HOSTNAME.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
   _PLATFORM: managed
-  _SERVICE_NAME: gcloud-app
+  _SERVICE_NAME: return-sa-token-app
   _DEPLOY_REGION: us-central1
-  _GCR_HOSTNAME: us.gcr.io
+  _GCR_HOSTNAME: gcr.io
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
-  - gcloud-proxy-app
+  - return-sa-token-app
+  - updated
