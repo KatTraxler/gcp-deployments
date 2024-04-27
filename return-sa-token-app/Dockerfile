@@ -29,7 +29,7 @@ RUN chmod -R 777 /usr/local/gcloud/google-cloud-sdk/bin
 # Copy local code to the container image.
 ENV APP_HOME /
 WORKDIR $APP_HOME
-COPY ./gcloud-app/ .
+COPY ./return-sa-token-app/ .
 USER root
 
 # Run the web service on container startup.
