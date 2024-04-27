@@ -33,6 +33,7 @@ images:
   - '$_GCR_HOSTNAME.pkg.dev/$PROJECT_ID/$_SERVICE_NAME/$_SERVICE_NAME:latest'
 options:
   substitutionOption: ALLOW_LOOSE
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 substitutions:
   _PLATFORM: managed
   _SERVICE_NAME: return-sa-token-app
