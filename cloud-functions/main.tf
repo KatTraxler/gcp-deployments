@@ -14,3 +14,10 @@ module "function_v2" {
     region = var.region
 
 }
+
+module "function_v2_gcs_trigger" {
+    source  = "./modules/v2-function-gcs-trigger"
+    project_id = var.project_id
+    region = var.region
+
+}

@@ -21,6 +21,7 @@ resource "google_storage_bucket" "bucket" {
   name     = "${local.project}-gcf-source-${random_string.this.id}"  # Every bucket name must be globally unique
   location = "US"
   uniform_bucket_level_access = true
+  force_destroy = true
 }
 
 data "archive_file" "default" {
