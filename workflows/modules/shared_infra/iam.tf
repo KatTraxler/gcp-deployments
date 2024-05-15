@@ -11,9 +11,9 @@ resource "google_service_account" "aws-proxy-app-service-account" {
 
 
 ## Cloud Workflows will run as this SA to invoke Cloud Run
-resource "google_service_account" "workflows-to-cloudrun-service-account" {
-  account_id   = "workflows-to-cloudrun-sa"
-  display_name = "Service Account Cloud Workflows will used to inbvoke the AWS proxy app in Cloud Run"
+resource "google_service_account" "workflows-runtime-service-account" {
+  account_id   = "workflows-runtime-sa"
+  display_name = "Service Account Cloud Workflows will used as their runtime SA"
   project = local.gcp_deployment_project_id
 
 }
@@ -32,7 +32,7 @@ data "google_compute_default_service_account" "default" {
 resource "google_service_account_iam_member" "actas-gce-default-account-by-workflow-sa" {
   service_account_id = data.google_compute_default_service_account.default.name
   role               = "roles/iam.serviceAccountUser"
-  member             = google_service_account.workflows-to-cloudrun-service-account.member
+  member             = google_service_account.workflows-runtime-service-account.member
 }
 
 
@@ -57,7 +57,7 @@ resource "google_service_account_iam_member" "act-as-gce-default-account-by-work
 resource "google_project_iam_member" "project_iam_assignment_05" {
   project = local.gcp_deployment_project_id
   role = "roles/workflows.invoker"
-  member = google_service_account.workflows-to-cloudrun-service-account.member
+  member = google_service_account.workflows-runtime-service-account.member
 }
 
 ## Allow the Cloud Run App to access all secrets in the Project
@@ -72,13 +72,21 @@ resource "google_project_iam_member" "project_iam_assignment_06" {
 resource "google_project_iam_member" "project_iam_assignment_07" {
   project = local.gcp_deployment_project_id
   role = "roles/secretmanager.admin"
-  member = google_service_account.workflows-to-cloudrun-service-account.member
+  member = google_service_account.workflows-runtime-service-account.member
 }
 
 # Allow the Workflows SA to managed (create, update) all Cloud Run Resources.  
 resource "google_project_iam_member" "project_iam_assignment_08" {
   project = local.gcp_deployment_project_id
   role = "roles/run.developer"
-  member = google_service_account.workflows-to-cloudrun-service-account.member
+  member = google_service_account.workflows-runtime-service-account.member
+}
+
+
+# Allow the Workflows SA to write logs
+resource "google_project_iam_member" "project_iam_assignment_09" {
+  project = local.gcp_deployment_project_id
+  role = "roles/logging.logWriter"
+  member = google_service_account.workflows-runtime-service-account.member
 }
 

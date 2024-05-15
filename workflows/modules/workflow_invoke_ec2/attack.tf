@@ -1,7 +1,5 @@
-data "google_service_account" "workflows-to-cloudrun-sa" {
-  account_id   = "workflows-to-cloudrun-sa"
-  project         = var.projectId
-  depends_on = [ google_service_account.workflows-to-cloudrun-service-account ]
+data "google_service_account" "workflows-runtime-sa" {
+  account_id   = "workflows-runtime-sa"
 }
 
 resource "random_string" "random" {
@@ -14,8 +12,8 @@ resource "random_string" "random" {
 resource "google_workflows_workflow" "workflow_to_invoke_ec2_get_password_data" {
   name            = "aws-ec2-get-password-data-srt"
   description     = "A workflow intended to match the functionality of the Status Red Team attack technique 'AWS Retrieve EC2 Password Data' documented here: https://stratus-red-team.cloud/attack-techniques/AWS/aws.credential-access.ec2-get-password-data/"
-  service_account = data.google_service_account.workflows-to-cloudrun-sa.id
-  project         = var.projectId
+  service_account = data.google_service_account.workflows-runtime-sa.id
+  project         = var.project_id
   region          = var.region
   source_contents = <<-EOF
 

@@ -7,3 +7,4 @@ variable "region" {
   description = "The geographical region to deploy resources into"
   type        = string
 }
+
