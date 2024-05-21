@@ -2,10 +2,14 @@ data "google_service_account" "workflows-runtime-sa" {
   account_id   = "workflows-runtime-sa"
 }
 
+data "google_compute_default_service_account" "default" {
+
+}
+
 resource "google_workflows_workflow" "workflow_with_callback_basic" {
   name            = "workflow-with-callback-basic"
   description     = "A workflow that opens up a basic callback (GET Request)"
-  service_account = data.google_service_account.workflows-runtime-sa.id
+  service_account = data.google_compute_default_service_account.default.email
   project         = var.project_id
   region          = var.region
   source_contents = <<-EOF
