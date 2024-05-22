@@ -8,6 +8,7 @@ module "shared_infra" {
     region     = var.region
 
 }
+
 module "deploy_workflow_invoke_ec2" {
     source  = "./modules/workflow_invoke_ec2"
     project_id = var.project_id

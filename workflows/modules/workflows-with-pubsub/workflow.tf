@@ -5,7 +5,7 @@ data "google_service_account" "workflows-runtime-sa" {
 resource "google_workflows_workflow" "workflow_with_pubsub_trigger" {
   name            = "workflow-with-pubsub-trigger"
   description     = "A workflow that is triggered by a Pubsub notification"
-  service_account = data.google_service_account.workflows-runtime-sa.id
+  service_account = data.google
   project         = var.project_id
   region          = var.region
   source_contents = <<-EOF
