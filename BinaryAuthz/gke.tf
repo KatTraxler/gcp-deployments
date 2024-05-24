@@ -9,9 +9,12 @@ resource "google_container_cluster" "kat_cluster" {
   # node pool and immediately delete it.
 
   initial_node_count       = 1
+
+## Tells the cluster if project-singleton policies are enabled and if to refer to them 
+## when admitting a container?  
   binary_authorization {
 
-      evaluation_mode = "DISABLED"
+      evaluation_mode = "PROJECT_SINGLETON_POLICY_ENFORCE"
   }
   enable_autopilot = true
   network = "vpc-01"
