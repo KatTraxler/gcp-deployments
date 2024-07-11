@@ -1,0 +1,50 @@
+Attestors
+binaryauthorization.projects.attestors.create
+	- google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.CreateAttestor
+binaryauthorization.projects.attestors.delete
+	- google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.DeleteAttestor
+binaryauthorization.projects.attestors.get
+	- google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.GetAttestor
+binaryauthorization.projects.attestors.getIamPolicy
+	- google.iam.v1.IAMPolicy.GetIamPolicy
+binaryauthorization.projects.attestors.list
+	- google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.ListAttestors
+binaryauthorization.projects.attestors.setIamPolicy
+binaryauthorization.projects.attestors.testIamPermissions
+binaryauthorization.projects.attestors.update
+	- google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdateAttestor
+binaryauthorization.projects.attestors.validateAttestationOccurrence
+
+
+PLATFORM POLCIES
+binaryauthorization.projects.platforms.policies.create
+binaryauthorization.projects.platforms.policies.delete
+binaryauthorization.projects.platforms.policies.get
+binaryauthorization.projects.platforms.policies.list
+binaryauthorization.projects.platforms.policies.replacePlatformPolicy
+binaryauthorization.projects.platforms.gke.policies.evaluate
+
+BINARYAUTH PROJECT POLICY
+binaryauthorization.projects.updatePolicy
+	- Event: google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdatePolicy
+binaryauthorization.projects.getPolicy
+	- google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.GetPolicy
+binaryauthorization.projects.policy.getIamPolicy
+	- google.iam.v1.IAMPolicy.GetIamPolicy
+binaryauthorization.projects.policy.setIamPolicy
+	- google.iam.v1.IAMPolicy.SetIamPolicy
+binaryauthorization.projects.policy.testIamPermissions
+
+
+SYSTEM POLICIY
+binaryauthorization.systempolicy.getPolicy
+
+MISC
+API: google.cloud.binaryauthorization.internal.AdmissionWebhook.AdmissionReview
+	- Permission: binaryauthorization.policy.evaluatePolicy
+	- Event: google.cloud.binaryauthorization.internal.AdmissionWebhook.AdmissionReview
+
+API: google.cloud.binaryauthorization.internal.AttestorEvaluator.FetchAuthenticatedAttestationPayloads
+	- Permission: binaryauthorization.attestors.verifyImageAttested
+	- Event: google.cloud.binaryauthorization.internal.AttestorEvaluator.FetchAuthenticatedAttestationPayloads
+	- Who: BinaryAuth P4SA

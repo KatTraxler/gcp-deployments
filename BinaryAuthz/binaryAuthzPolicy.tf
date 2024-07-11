@@ -16,6 +16,7 @@ resource "google_binary_authorization_policy" "policy_1" {
    # require_attestations_by = [google_binary_authorization_attestor.attestor_2.name]
   }
 
+## Cluster specific rules on the Project Singleton Policy
 #   cluster_admission_rules {
 #     cluster                 = "us-central1.kat-binaryauthz"
 #     evaluation_mode         = "ALWAYS_DENY"
@@ -23,6 +24,7 @@ resource "google_binary_authorization_policy" "policy_1" {
 # ## The resource names of the attestors that must attest to a container image - can be cross-project    
 #     require_attestations_by = [google_binary_authorization_attestor.attestor_2.name]
 #   }
+
 }
 
 # ##########################################
