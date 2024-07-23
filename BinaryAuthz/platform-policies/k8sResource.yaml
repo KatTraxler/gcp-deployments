@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "helloworld-gke-sha256-1"
-        image: "us-docker.pkg.dev/trust-kat-dev/my-repos/helloworld-gke@sha256:505e67a8a0d4034189c8cc1f9d3c08779df13a03334c9f393628a07bf176f801"
+        image: "us-docker.pkg.dev/host-memory-analysis-01/my-repos/helloworld-gke@sha256:505e67a8a0d4034189c8cc1f9d3c08779df13a03334c9f393628a07bf176f801"
 ---
 apiVersion: "autoscaling/v2"
 kind: "HorizontalPodAutoscaler"

@@ -1,13 +1,3 @@
-# import {
-#   id = "trust-kat-dev/global/attestor-keys/attestor-key"
-#   to = google_kms_crypto_key.attestor-key
-# }
-
-# import {
-#   id = "projects/trust-kat-dev/locations/global/keyRings/attestor-keys"
-#   to = google_kms_key_ring.attestor-keys
-# }
-
 #######################################################
 ### Deploy the KMS resources once and do not destroy ##
 #######################################################

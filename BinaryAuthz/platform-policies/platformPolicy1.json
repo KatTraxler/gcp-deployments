@@ -1,5 +1,5 @@
 {
-    "name": "projects/trust-kat-dev/platforms/gke/policies/1",
+    "name": "projects/host-memory-analysis-01/platforms/gke/policies/platformpolicy1",
     "updateTime": "2024-03-14T19:37:41.962671Z",
     "gkePolicy": {
       "imageAllowlist": {

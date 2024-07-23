@@ -53,7 +53,7 @@ resource "google_cloud_run_service" "cloudrun-service-v1" {
 
 resource "google_cloud_run_domain_mapping" "my-domain-mapping" {
   location = var.region
-  name     = "run.toctesting.com"
+  name     = ""
 
   metadata {
     namespace = var.project_id

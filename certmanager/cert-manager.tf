@@ -7,7 +7,7 @@ resource "google_certificate_manager_dns_authorization" "authorization" {
   project     = var.project_id
   location    = "global"
   description = "The default dns"
-  domain      = "toc-testing.com"
+  domain      = ""
 
 
   depends_on = [ google_project_service.enable_project_apis ]

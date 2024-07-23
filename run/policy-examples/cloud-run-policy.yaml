@@ -3,7 +3,7 @@
       - user:mike@example.com
       - group:admins@example.com
       - domain:google.com
-      - serviceAccount:trust-kat-dev@appspot.gserviceaccount.com
+      - serviceAccount:PROJECT_IDv@appspot.gserviceaccount.com
       role: roles/run.invoker
     - members:
       - user:eve@example.com

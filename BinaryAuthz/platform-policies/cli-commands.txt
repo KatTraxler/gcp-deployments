@@ -1,15 +1,17 @@
 ## Create a CV policy:
-gcloud alpha container binauthz policy create 1 --platform=gke --policy-file=platformPolicy.yaml
+gcloud alpha container binauthz policy create platformpolicy1 --platform=gke --policy-file=platformPolicy.yaml
 
 ## Evaluate an image against a CV policy:
-gcloud alpha container binauthz policy evaluate 1 --platform=gke --image=us-docker.pkg.dev/trust-kat-dev/my-repos/helloworld-gke:latest
+gcloud alpha container binauthz policy evaluate 1 --platform=gke --image=us-docker.pkg.dev/PROJECT_ID/my-repos/helloworld-gke:latest
 
 ## Pull logs directly from Logging API:
-gcloud logging read --order="desc" --freshness=5m --project=trust-kat-dev 'logName:"binaryauthorization.googleapis.com" "policyName"'
+gcloud logging read --order="desc" --freshness=5m --project=host-memory-analysis-01 'logName:"binaryauthorization.googleapis.com" "policyName"'
 
 ## View violations logged by CV:
 gcloud logging read \
      --order="desc" \
      --freshness=7d \
-     --project=CLUSTER_PROJECT_ID \
+     --project=host-memory-analysis-01 \
     'logName:"binaryauthorization.googleapis.com%2Fcontinuous_validation" "policyName"'
+
+    
