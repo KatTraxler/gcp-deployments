@@ -5,7 +5,7 @@ steps:
       - -t
       - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:latest'
       - -f
-      - './image-files/Dockerfile'
+      - './containers/avml-deep-learning/image-files/Dockerfile'
       - .
   - name: gcr.io/cloud-builders/docker
     args:
