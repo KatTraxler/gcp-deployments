@@ -19,7 +19,7 @@ resource "google_cloudbuild_trigger" "avml_cloudbuild_trigger" {
   }
 
 
-  filename = "./containers/avml-deep-learning/amvl/cloudbuild.yaml"
+  filename = "./containers/avml-deep-learning/image-files/cloudbuild.yaml"
 }
 
 
