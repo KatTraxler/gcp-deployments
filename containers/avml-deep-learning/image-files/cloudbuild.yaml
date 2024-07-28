@@ -16,7 +16,7 @@ options:
 substitutions:
   _PLATFORM: managed
   _REPO_NAME: avml-deep-learning
-  _SERVICE_NAME: aavml-deep-learning-image
+  _SERVICE_NAME: avml-deep-learning-image
   _DEPLOY_REGION: us-central1
   _GCR_HOSTNAME: gcr.io
 images:

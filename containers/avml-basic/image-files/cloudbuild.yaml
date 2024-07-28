@@ -16,7 +16,7 @@ options:
 substitutions:
   _PLATFORM: managed
   _REPO_NAME: avml-basic
-  _SERVICE_NAME: aavml-basic
+  _SERVICE_NAME: avml-basic
   _DEPLOY_REGION: us-central1
   _GCR_HOSTNAME: gcr.io
 images:
