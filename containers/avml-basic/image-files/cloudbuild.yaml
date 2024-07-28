@@ -1,0 +1,23 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:latest'
+      - -f
+      - './containers/avml-basic/image-files/Dockerfile'
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:latest'
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+substitutions:
+  _PLATFORM: managed
+  _REPO_NAME: avml-basic
+  _SERVICE_NAME: aavml-basic
+  _DEPLOY_REGION: us-central1
+  _GCR_HOSTNAME: gcr.io
+images:
+  - $_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:latest

@@ -49,10 +49,10 @@ resource "google_workbench_instance" "container-instance" {
       nic_type = "GVNIC"
     }
 
-    metadata = {
-      terraform = "true"
-      startup-script-url = "gs://${google_storage_bucket_object.startup-scripts.bucket}/startup-script.sh"
-    }
+    # metadata = {
+    #   terraform = "true"
+    #   startup-script-url = "gs://${google_storage_bucket_object.startup-scripts.bucket}/startup-script.sh"
+    # }
 
     enable_ip_forwarding = true
 

@@ -23,7 +23,7 @@ resource "google_workbench_instance" "avml-container-instance" {
 
   gce_setup {
     container_image {
-      repository = "us-central1-docker.pkg.dev/host-memory-analysis-01/memory-dump-avml/memory-dump-avml"
+      repository = "gcr.io/host-memory-analysis-01/aavml-deep-learning-image"
       tag = "latest"
     }
     shielded_instance_config {
@@ -49,10 +49,10 @@ resource "google_workbench_instance" "avml-container-instance" {
       nic_type = "GVNIC"
     }
 
-    # metadata = {
-    #   terraform = "true"
-    #   startup-script-url = "gs://${google_storage_bucket_object.startup-scripts.bucket}/startup-script.sh"
-    # }
+    metadata = {
+      terraform = "true"
+      startup-script-url = "gs://${google_storage_bucket_object.startup-scripts.bucket}/startup-script.sh"
+    }
 
     enable_ip_forwarding = true
 
@@ -70,6 +70,7 @@ resource "google_workbench_instance" "avml-container-instance" {
   }
 
   desired_state = "ACTIVE"
+  depends_on = [ google_project_iam_member.notebooks-p4sa ]
 
 }
 
@@ -80,4 +81,39 @@ data "google_compute_default_service_account" "default" {
 }
 
 data "google_client_openid_userinfo" "me" {
+}
+
+data "google_project" "my-project" {
+  project_id = var.project_id
+}
+
+###########################################################################
+##### Grant Vertex AI Workbench P4SA access to artifact registry
+###########################################################################
+
+resource "google_project_iam_member" "artifactregistry-notebooks" {
+  project = var.project_id
+  role    = "roles/artifactregistry.reader"
+  member  = "serviceAccount:service-${data.google_project.my-project.number}@gcp-sa-notebooks.iam.gserviceaccount.com"
+}
+
+
+#####################################################################################
+##### Grant Vertex AI Workbench P4SA access to get Startup script from Storage
+####################################################################################
+
+resource "google_project_iam_member" "storageviewer-notebooks" {
+  project = var.project_id
+  role    = "roles/storage.objectViewer"
+  member  = "serviceAccount:service-${data.google_project.my-project.number}@gcp-sa-notebooks.iam.gserviceaccount.com"
+}
+
+###########################################################################
+##### Grant Vertex AI Workbench P4SA its standard Role
+###########################################################################
+
+resource "google_project_iam_member" "notebooks-p4sa" {
+  project = var.project_id
+  role    = "roles/aiplatform.notebookServiceAgent"
+  member  = "serviceAccount:service-${data.google_project.my-project.number}@gcp-sa-notebooks.iam.gserviceaccount.com"
 }
