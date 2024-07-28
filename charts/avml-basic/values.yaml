@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: gcr.io/host-memory-analysis-01/avml-deep-learning-image
+  repository: gcr.io/host-memory-analysis-01/avml-basic
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "deep-learning-avml"
+fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
