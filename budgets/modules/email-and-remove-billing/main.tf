@@ -1,4 +1,3 @@
-
 ########################################################################
 # Datasources
 ########################################################################
@@ -30,7 +29,7 @@ resource "google_monitoring_notification_channel" "notification_channel" {
 }
 
 ########################################################################
-# Budgets
+# Notification Budget
 ########################################################################
 
 resource "google_billing_budget" "notification_budget" {
@@ -66,4 +65,62 @@ resource "google_billing_budget" "notification_budget" {
     monitoring_notification_channels = [google_monitoring_notification_channel.notification_channel.name]
     enable_project_level_recipients  = true
   }
+}
+
+########################################################################
+# Kill Switch Budget
+########################################################################
+resource "google_billing_budget" "killswitch_budget" {
+  billing_account = var.billing_account_id
+  display_name = "Unlink the billing account from all Projects"
+
+  budget_filter {
+    resource_ancestors   = [data.google_organization.org.id]
+    calendar_period = "MONTH"
+  }
+
+  amount {
+    specified_amount {
+      currency_code = "USD"
+      units = var.spend
+    }
+  }
+
+
+   threshold_rules {
+    threshold_percent = 1.2
+  }
+    all_updates_rule {
+    pubsub_topic                     =  google_pubsub_topic.killswitch-budget-topic.id
+    monitoring_notification_channels = [google_monitoring_notification_channel.notification_channel.name]
+    enable_project_level_recipients  = true
+  }
+}
+
+########################################################################
+# Pubsub Destination Topic for Killswitch Budget
+########################################################################
+resource "google_pubsub_topic" "killswitch-budget-topic" {
+  name = "killswitch-budget-topic"
+
+
+  message_retention_duration = "86600s"
+}
+
+
+########################################################################
+# EventArc Trigger Bridging PubSub and Workflow
+########################################################################
+resource "google_eventarc_trigger" "killswitch-trigger" {
+    name = "killswitch-trigge"
+    location = var.region
+    service_account = google_service_account.eventarc_sa.email
+    matching_criteria {
+        attribute = "type"
+        value = "google.cloud.pubsub.topic.v1.messagePublished"
+    }
+    destination {
+        workflow = google_workflows_workflow.workflow_to_unlink_billing_accounts.id
+    }
+
 }
