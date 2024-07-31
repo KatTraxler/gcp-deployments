@@ -1,3 +1,15 @@
+
+########################################################################
+# Datasources
+########################################################################
+
+data "google_project" "project" {
+}
+
+data "google_organization" "org" {
+  domain = var.domain
+}
+
 ########################################################################
 # Notification Channel
 ########################################################################
@@ -15,4 +27,43 @@ resource "google_monitoring_notification_channel" "notification_channel" {
   labels      = var.labels
 
   force_delete = false
+}
+
+########################################################################
+# Budgets
+########################################################################
+
+resource "google_billing_budget" "notification_budget" {
+  billing_account = var.billing_account_id
+  display_name = "Budget for All Projects in the Blue Domain Organization"
+
+  budget_filter {
+    resource_ancestors   = [data.google_organization.org.id]
+    calendar_period = "MONTH"
+  }
+
+  amount {
+    specified_amount {
+      currency_code = "USD"
+      units = var.spend
+    }
+  }
+
+
+  threshold_rules {
+    threshold_percent = 0.9
+    spend_basis = "FORECASTED_SPEND"
+  }
+  threshold_rules {
+    threshold_percent = 1.0
+    spend_basis       = "FORECASTED_SPEND"
+  }
+
+   threshold_rules {
+    threshold_percent = 1.0
+  }
+    all_updates_rule {
+    monitoring_notification_channels = [google_monitoring_notification_channel.notification_channel.name]
+    enable_project_level_recipients  = true
+  }
 }

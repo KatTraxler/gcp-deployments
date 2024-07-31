@@ -33,3 +33,21 @@ variable "labels" {
   description = "(Optional) Configuration fields that define the channel and its behavior. Labels with sensitive data should be configured via the 'sensitive_labels' block."
   default     = {}
 }
+
+########################################################################
+# Billing Variables
+########################################################################
+variable "domain" {
+  description = "FQDN of domain associated with GCP organization"
+  type        = string
+}
+
+variable "spend" {
+  description = "The dollar amount allowed across all projects in the organization"
+  type        = string
+}
+
+variable "billing_account_id" {
+  description = "The ID of the Billing account to apply the budget"
+  type        = string
+}
