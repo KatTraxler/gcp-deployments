@@ -1,0 +1,31 @@
+{
+    "name": "projects/kats-lolz-yolo-project/locations/us-central1/jobs/my-job",
+    "taskGroups": [
+      {
+        "parallelism": "1",
+        "runAsNonRoot": true,
+        "permissiveSsh": true,
+        "taskCount": 1,
+        "requireHostsFile": true,
+        "taskSpec": {
+          "computeResource": {
+            "cpuMilli": "1000",
+            "memoryMib": "512"
+          },
+          "runnables": [
+            {
+              "script": {
+                "text": "echo hi"
+              },
+              "background": false,
+              "ignoreExitStatus": true
+            }
+          ],
+          "volumes": []
+        }
+      }
+    ],
+    "logsPolicy": {
+      "destination": "CLOUD_LOGGING"
+    }
+  }

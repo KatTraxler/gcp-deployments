@@ -1,0 +1,20 @@
+{
+    "labels": {
+      "env": "prod"
+    },
+    "name": "projects/kats-lolz-yolo-project/locations/us-central1/resourceAllowances/batchComputeResource",
+    "usageResourceAllowance": {
+      "spec": {
+        "limit": {
+          "limit": 5
+        },
+        "type": "cpu-core-hours"
+      },
+      "status": {
+        "limitStatus": {
+          "consumptionInterval": {}
+        },
+        "report": {}
+      }
+    }
+}

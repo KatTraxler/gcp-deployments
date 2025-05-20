@@ -34,10 +34,9 @@ resource "google_monitoring_notification_channel" "notification_channel" {
 
 resource "google_billing_budget" "notification_budget" {
   billing_account = var.billing_account_id
-  display_name = "Budget for All Projects in the Blue Domain Organization"
+  display_name = "Budget for All Projects associated with the billing account"
 
   budget_filter {
-    resource_ancestors   = [data.google_organization.org.id]
     calendar_period = "MONTH"
   }
 
@@ -72,10 +71,9 @@ resource "google_billing_budget" "notification_budget" {
 ########################################################################
 resource "google_billing_budget" "killswitch_budget" {
   billing_account = var.billing_account_id
-  display_name = "Unlink the billing account from all Projects"
+  display_name = "Unlink the billing from all projects."
 
   budget_filter {
-    resource_ancestors   = [data.google_organization.org.id]
     calendar_period = "MONTH"
   }
 
@@ -91,28 +89,28 @@ resource "google_billing_budget" "killswitch_budget" {
     threshold_percent = 1.2
   }
     all_updates_rule {
-    pubsub_topic                     =  google_pubsub_topic.killswitch-budget-topic.id
+    pubsub_topic                     =  google_pubsub_topic.killswitch-trigger-eventarc-created-topic.id
     monitoring_notification_channels = [google_monitoring_notification_channel.notification_channel.name]
     enable_project_level_recipients  = true
   }
 }
 
-########################################################################
-# Pubsub Destination Topic for Killswitch Budget
-########################################################################
-resource "google_pubsub_topic" "killswitch-budget-topic" {
-  name = "killswitch-budget-topic"
+# ########################################################################
+# # Pubsub Destination Topic for Killswitch Budget
+# ########################################################################
+# resource "google_pubsub_topic" "killswitch-budget-topic" {
+#   name = "killswitch-budget-topic"
 
 
-  message_retention_duration = "86600s"
-}
+#   message_retention_duration = "86600s"
+# }
 
 
 ########################################################################
 # EventArc Trigger Bridging PubSub and Workflow
 ########################################################################
 resource "google_eventarc_trigger" "killswitch-trigger" {
-    name = "killswitch-trigge"
+    name = "killswitch-trigger"
     location = var.region
     service_account = google_service_account.eventarc_sa.email
     matching_criteria {
@@ -123,4 +121,8 @@ resource "google_eventarc_trigger" "killswitch-trigger" {
         workflow = google_workflows_workflow.workflow_to_unlink_billing_accounts.id
     }
 
+}
+
+resource "google_pubsub_topic" "killswitch-trigger-eventarc-created-topic" {
+    name = "killswitch-trigger-eventarc-created-topic"
 }
