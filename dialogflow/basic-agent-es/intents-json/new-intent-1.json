@@ -1,0 +1,130 @@
+{
+  "intents": [
+    {
+      "displayName": "Greeting Intent",
+      "priority": 500000,
+      "webhookState": "WEBHOOK_STATE_UNSPECIFIED",
+      "trainingPhrases": [
+        {
+          "type": "EXAMPLE",
+          "parts": [
+            {
+              "text": "Hi",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "type": "EXAMPLE",
+          "parts": [
+            {
+              "text": "Hello there",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "type": "EXAMPLE",
+          "parts": [
+            {
+              "text": "Good morning",
+              "userDefined": false
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "text": {
+            "text": [
+              "Hello! How can I assist you today?",
+              "Good day! What can I do for you?"
+            ]
+          }
+        }
+      ],
+      "inputContextNames": [],
+      "outputContexts": []
+    },
+    {
+      "displayName": "Order Status Intent",
+      "priority": 500000,
+      "webhookState": "WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING",
+      "trainingPhrases": [
+        {
+          "type": "EXAMPLE",
+          "parts": [
+            {
+              "text": "What's the status of my order ",
+              "userDefined": false
+            },
+            {
+              "text": "12345ABC",
+              "entityType": "@sys.any",
+              "alias": "orderNumber",
+              "userDefined": true
+            },
+            {
+              "text": "?",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "type": "EXAMPLE",
+          "parts": [
+            {
+              "text": "Check order ",
+              "userDefined": false
+            },
+            {
+              "text": "XYZ987",
+              "entityType": "@sys.any",
+              "alias": "orderNumber",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "type": "TEMPLATE",
+          "parts": [
+            {
+              "text": "Where is my order @sys.any:orderNumber",
+              "userDefined": false
+            }
+          ]
+        }
+      ],
+      "action": "check.order.status",
+      "parameters": [
+        {
+          "displayName": "orderNumber",
+          "value": "$orderNumber",
+          "entityTypeDisplayName": "@sys.any",
+          "mandatory": true,
+          "prompts": [
+            "What is your order number?",
+            "Please provide the order ID."
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "text": {
+            "text": [
+              "Let me check the status for order #$orderNumber."
+            ]
+          }
+        }
+      ],
+      "inputContextNames": [],
+      "outputContexts": [
+        {
+          "name": "projects/your-project-id/agent/sessions/generic/contexts/order_check_pending",
+          "lifespanCount": 2
+        }
+      ]
+    }
+  ]
+}
+}
