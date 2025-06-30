@@ -83,3 +83,82 @@ resource "null_resource" "default_start_flow" {
     google_dialogflow_cx_agent.agent
   ]
 }
+//////////
+
+
+
+resource "google_dialogflow_cx_flow" "webhook_flow" {
+  parent       = google_dialogflow_cx_agent.agent.id
+  display_name = "WebhookFlow"
+  description  = "Test Flow"
+
+  nlu_settings {
+    classification_threshold = 0.3
+    model_type               = "MODEL_TYPE_STANDARD"
+  }
+  
+
+  event_handlers {
+    event = "custom-event"
+    trigger_fulfillment {
+      return_partial_responses = false
+      
+      messages {
+        text {
+          text = ["I didn't get that. Can you say it again?"]
+        }
+      }
+    }
+  }
+
+    event_handlers {
+    event = "webhook-event"
+    trigger_fulfillment {
+      return_partial_responses = true
+      webhook = google_dialogflow_cx_webhook.basic_webhook.id
+      tag     = "webhook-event"
+      set_parameter_actions {
+        parameter = "some-param"
+        value     = "123.45"
+      }
+      enable_generative_fallback = true
+      messages {
+        text {
+          text = ["invoking webhook"]
+        }
+      }
+    }
+    
+  }
+
+  event_handlers {
+    event = "sys.no-match-default"
+    trigger_fulfillment {
+      return_partial_responses = false
+      messages {
+        text {
+          text = ["Sorry, could you say that again?"]
+        }
+      }
+    }
+  }
+
+  event_handlers {
+    event = "sys.no-input-default"
+    trigger_fulfillment {
+      return_partial_responses = false
+      messages {
+        text {
+          text = ["One more time?"]
+        }
+      }
+    }
+  }
+  advanced_settings {
+    logging_settings {
+      enable_stackdriver_logging     = true
+      enable_interaction_logging     = true
+      enable_consent_based_redaction = true
+    }
+  }
+}
